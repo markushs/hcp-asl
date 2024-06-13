@@ -247,7 +247,7 @@ def split_mbpcasl(mbpcasl, tis_name, calib0_name, calib1_name):
     calibration images.
     """
     fslroi(str(mbpcasl), str(tis_name), 0, 86)
-    fslroi(str(mbpcasl), str(calib0_name), 88, 1)
+    fslroi(str(mbpcasl), str(calib0_name), 89, 1) #First M0 is corrupt, force use of 2nd M0
     fslroi(str(mbpcasl), str(calib1_name), 89, 1)
 
 
