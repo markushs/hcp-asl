@@ -403,12 +403,12 @@ def surface_projection_stage(
     FinalASLRes="2.5",
     SmoothingFWHM="2",
     GreyOrdsRes="2",
-    RegName="MSMAll",
+    RegName="MSMSulc",
 ):
     """
     Project perfusion results to the cortical surface and generate
     CIFTI representation which includes both low res mesh surfaces
-    in MSMAll Atlas space, and subcortical structures in MNI
+    in MSMSulc Atlas space, and subcortical structures in MNI
     voxel space
 
     Parameters
