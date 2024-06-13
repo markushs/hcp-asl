@@ -86,6 +86,10 @@ def tag_control_differencing(series, scaling_factors, betas_dir, mask=None):
         - X_even[nonzero_mask] * Y_odd[nonzero_mask]
     ) / (X_odd[nonzero_mask] - X_even[nonzero_mask])
 
+    # If NaN (used to be a problem in earlier versions)
+    B_perf = np.nan_to_num(B_perf)
+    B_baseline = np.nan_to_num(B_baseline) 
+
     # save both images
     B_perf_name = betas_dir / "beta_perf.nii.gz"
     B_perf_img = nb.nifti1.Nifti1Image(B_perf, affine=Y_moco.affine)
